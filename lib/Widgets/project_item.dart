@@ -21,7 +21,9 @@ class ProjectItem extends StatelessWidget {
             Hero(
               tag: project.title,
               child: Image.asset(
-                  "assets/images/projects/${project.projectFolder}/${project.imagesLocations[0]}"),
+                "assets/images/projects/${project.projectFolder}/${project.imagesLocations[0]}",
+                fit: BoxFit.cover,
+              ),
             ),
             const SizedBox(
               height: 8,

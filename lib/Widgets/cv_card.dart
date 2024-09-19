@@ -24,39 +24,37 @@ class CvCard extends StatelessWidget {
       width: cardWidth,
       child: Card(
         color: cardBg,
-        child: Expanded(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Text(
-                "Curriculum Vitae",
-                style: Theme.of(context).textTheme.bodyLarge,
+        child: Column(
+          // Replaced Expanded with Column to correctly use Flex widget
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text(
+              "Curriculum Vitae",
+              style: Theme.of(context).textTheme.bodyLarge,
+            ),
+            SizedBox(
+              height: cardHeight * 0.05,
+            ),
+            SizedBox(
+              width: width * 0.1,
+              height: height * 0.1,
+              child: Image.asset(
+                "assets/images/CV.png",
               ),
-              SizedBox(
-                height: cardHeight * 0.05,
+            ),
+            SizedBox(
+              height: cardHeight * 0.025,
+            ),
+            ElevatedButton(
+              onPressed: () {
+                openUrl("files/cv.pdf");
+              },
+              child: Text(
+                "DOWNLOAD",
+                style: TextStyle(fontWeight: FontWeight.bold, color: darkColor),
               ),
-              SizedBox(
-                width: width * 0.1,
-                height: height * 0.1,
-                child: Image.asset(
-                  "assets/images/CV.png",
-                ),
-              ),
-              SizedBox(
-                height: cardHeight * 0.025,
-              ),
-              ElevatedButton(
-                onPressed: () {
-                  openUrl("files/cv.pdf");
-                },
-                child: Text(
-                  "DOWNLOAD",
-                  style:
-                      TextStyle(fontWeight: FontWeight.bold, color: darkColor),
-                ),
-              )
-            ],
-          ),
+            )
+          ],
         ),
       ),
     );

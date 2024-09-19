@@ -28,37 +28,37 @@ class EducationItem extends StatelessWidget {
                 height: 150,
               ),
               Expanded(
+                // This Expanded properly wraps the Column inside the Row
                 child: Container(
                   height: 150,
-                  child: Expanded(
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      children: [
-                        Text(
-                            maxLines: 2,
-                            education.title,
-                            style: Theme.of(context)
-                                .textTheme
-                                .bodyLarge!
-                                .copyWith(overflow: TextOverflow.ellipsis)),
-                        Text(
-                          maxLines: 2,
-                          education.institute,
-                          style: Theme.of(context)
-                              .textTheme
-                              .bodyMedium!
-                              .copyWith(overflow: TextOverflow.ellipsis),
-                        ),
-                        Text(
-                          education.duration,
-                          style: Theme.of(context).textTheme.bodyMedium,
-                        ),
-                      ],
-                    ),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      Text(
+                        maxLines: 2,
+                        education.title,
+                        style: Theme.of(context)
+                            .textTheme
+                            .bodyLarge!
+                            .copyWith(overflow: TextOverflow.ellipsis),
+                      ),
+                      Text(
+                        maxLines: 2,
+                        education.institute,
+                        style: Theme.of(context)
+                            .textTheme
+                            .bodyMedium!
+                            .copyWith(overflow: TextOverflow.ellipsis),
+                      ),
+                      Text(
+                        education.duration,
+                        style: Theme.of(context).textTheme.bodyMedium,
+                      ),
+                    ],
                   ),
                 ),
-              )
+              ),
             ],
           ),
         ),

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:portfolio/Widgets/projects_counts.dart';
 import 'package:portfolio/Widgets/stack_card.dart';
 import 'package:portfolio/colors/app_colors.dart';
+import 'package:transparent_image/transparent_image.dart';
 
 class ProfileScreen extends StatelessWidget {
   const ProfileScreen({super.key});
@@ -18,10 +19,16 @@ class ProfileScreen extends StatelessWidget {
         width: cardWidth,
         child: Column(
           children: [
-            const CircleAvatar(
-              radius: 50.0,
-              backgroundImage:
-                  NetworkImage("assets/images/profile_picture.jpeg"),
+            Container(
+              width: 100,
+              height: 100,
+              decoration: const BoxDecoration(shape: BoxShape.circle),
+              child: ClipOval(
+                child: FadeInImage(
+                    placeholder: MemoryImage(kTransparentImage),
+                    image:
+                        const AssetImage('assets/images/profile_picture.jpeg')),
+              ),
             ),
             const SizedBox(
               height: 8,

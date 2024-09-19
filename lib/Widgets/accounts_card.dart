@@ -27,54 +27,55 @@ class AccountsCard extends StatelessWidget {
         color: cardBg,
         child: LayoutBuilder(
           builder: (context, constraints) {
-            return Expanded(
-              child: Column(
-                children: [
-                  Text(
-                    "Accounts",
-                    style: Theme.of(context).textTheme.bodyLarge,
-                  ),
-                  Expanded(
-                    child: GridView.builder(
-                      padding: const EdgeInsets.all(8),
-                      gridDelegate:
-                          const SliverGridDelegateWithMaxCrossAxisExtent(
-                        maxCrossAxisExtent: 50,
-                        childAspectRatio: 1,
-                        crossAxisSpacing: 16,
-                        mainAxisSpacing: 8,
-                      ),
-                      itemCount: accountsData.length,
-                      itemBuilder: (context, index) {
-                        return MouseRegion(
-                          cursor: SystemMouseCursors.click,
-                          child: GestureDetector(
-                            onTap: () {
-                              openUrl(accountsData[index].link);
-                            },
-                            child: GridTile(
-                              child: Container(
-                                padding: const EdgeInsets.all(08),
-                                decoration: BoxDecoration(
-                                    border: Border.all(
-                                      width: 1,
-                                      color: tabIconColors,
-                                    ),
-                                    borderRadius: BorderRadius.circular(10)),
-                                width: 300,
-                                height: 300,
-                                child: Image.asset(
-                                  "assets/images/accounts/${accountsData[index].image}",
+            return Column(
+              // Add Column here
+              children: [
+                Text(
+                  "Accounts",
+                  style: Theme.of(context).textTheme.bodyLarge,
+                ),
+                Expanded(
+                  // Expanded is now properly inside a Column
+                  child: GridView.builder(
+                    padding: const EdgeInsets.all(8),
+                    gridDelegate:
+                        const SliverGridDelegateWithMaxCrossAxisExtent(
+                      maxCrossAxisExtent: 50,
+                      childAspectRatio: 1,
+                      crossAxisSpacing: 16,
+                      mainAxisSpacing: 8,
+                    ),
+                    itemCount: accountsData.length,
+                    itemBuilder: (context, index) {
+                      return MouseRegion(
+                        cursor: SystemMouseCursors.click,
+                        child: GestureDetector(
+                          onTap: () {
+                            openUrl(accountsData[index].link);
+                          },
+                          child: GridTile(
+                            child: Container(
+                              padding: const EdgeInsets.all(8),
+                              decoration: BoxDecoration(
+                                border: Border.all(
+                                  width: 1,
+                                  color: tabIconColors,
                                 ),
+                                borderRadius: BorderRadius.circular(10),
+                              ),
+                              width: 300,
+                              height: 300,
+                              child: Image.asset(
+                                "assets/images/accounts/${accountsData[index].image}",
                               ),
                             ),
                           ),
-                        );
-                      },
-                    ),
-                  )
-                ],
-              ),
+                        ),
+                      );
+                    },
+                  ),
+                ),
+              ],
             );
           },
         ),

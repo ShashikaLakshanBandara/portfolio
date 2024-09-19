@@ -9,9 +9,9 @@ class ProjectsCounts extends StatelessWidget {
     Size screenSize = MediaQuery.of(context).size;
 
     List<Widget> children = [
-      ProjectsCountsItem(number: "4", name: "Native Android"),
-      ProjectsCountsItem(number: "4", name: "Flutter"),
-      ProjectsCountsItem(number: "4", name: ".Net Standalone"),
+      const ProjectsCountsItem(number: "3", name: "Native Android"),
+      const ProjectsCountsItem(number: "2", name: "Flutter"),
+      const ProjectsCountsItem(number: "1", name: ".Net Standalone"),
     ];
 
     Widget content;

@@ -37,6 +37,7 @@ dependencies:
   cupertino_icons: ^1.0.6
   google_fonts: ^6.2.1
   url_launcher: ^6.3.0
+  transparent_image: ^2.0.1
 
 dev_dependencies:
   flutter_test:
@@ -67,7 +68,10 @@ flutter:
     - assets/images/
     - assets/images/courses/
     - assets/images/projects/edu_buddy/
+    - assets/images/projects/calculator/
     - assets/images/projects/phone_finder/
+    - assets/images/projects/phone_finder_pro/
+    - assets/images/projects/portfolio/
     - assets/images/projects/vehicle_parking_manager/
   #   - images/a_dot_ham.jpeg
 

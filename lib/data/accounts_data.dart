@@ -6,7 +6,7 @@ final accountsData = [
     link: "mailto:shashikalakshanbandara2000@gmail.com",
   ),
   Account(
-    image: "Linkedin.png",
+    image: "LinkedIn.png",
     link: "https://www.linkedin.com/in/shashika-lakshan-bandara/",
   ),
   Account(
